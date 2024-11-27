@@ -327,7 +327,7 @@ int select_background(SDL_Renderer* renderer, TTF_Font* font, Mix_Chunk* clickSo
         SDL_Rect bgRects[3] = {
             {100, 500, 400, 300},
             {600, 500, 400, 300},
-            {1100, 500, 400, 300}};
+            {1100, 500, 400, 300}};//xpos,ypos,width,height
 
         int i;
 		for ( i = 0; i < 3; i++) {
@@ -361,7 +361,7 @@ void play_game(SDL_Renderer* renderer, TTF_Font* font, Mix_Chunk* clickSound, ch
 
         // Generate a random number between 1 and 6
         srand(time(NULL));
-        randomNum = rand() % 6 + 1;
+        randomNum = rand() % 6 + 1;	//6 numbers, +1 or 1-6(instead of 0-5)
 
         while (input == -1) {
             while (SDL_PollEvent(&event)) {
@@ -386,7 +386,7 @@ void play_game(SDL_Renderer* renderer, TTF_Font* font, Mix_Chunk* clickSound, ch
             SDL_RenderPresent(renderer);
         }
 
-        // Check if player survived
+        // Check if player survives or dies
         if (input == randomNum) {
         	Mix_PauseMusic();
 			system("powershell -c (New-Object Media.SoundPlayer 'assets/gunshot.wav').PlaySync()");
