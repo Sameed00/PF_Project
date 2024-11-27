@@ -371,8 +371,12 @@ void play_game(SDL_Renderer* renderer, TTF_Font* font, Mix_Chunk* clickSound, ch
                 if (event.type == SDL_KEYDOWN) {
                     if (event.key.keysym.sym >= SDLK_1 && event.key.keysym.sym <= SDLK_6) {
                         input = event.key.keysym.sym - SDLK_0;
-                    }
-                }
+                    }else {
+			render_centered_text(renderer, font, "You die! Prepare for the surprise.", (SDL_Color){255, 0, 0}, -100);
+			SDL_RenderPresent(renderer);
+			SDL_Delay(3000);
+		    }    
+		}
             }
 
             // Render game screen
