@@ -25,11 +25,7 @@ void random_surprise();
 void add_to_survivors_list(const char* name);
 SDL_Texture* render_text(SDL_Renderer* renderer, const char* text, TTF_Font* font, SDL_Color color);
 void render_centered_text(SDL_Renderer* renderer, TTF_Font* font, const char* text, SDL_Color color, int yOffset);
-void triggerBlueScreenEffect(SDL_Renderer *renderer, TTF_Font* font);
-void randomWindowBehavior(SDL_Window *window);
 void lockMouse();
-void triggerColorFilter(SDL_Renderer *renderer, int mode);
-void renderText(SDL_Renderer* renderer, const char* text, int x, int y, SDL_Color color);
 SDL_Color white = {255, 255, 255, 255};
 
 
